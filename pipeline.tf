@@ -11,6 +11,7 @@ resource "aws_codebuild_project" "tf-plan" {
     compute_type                = "BUILD_GENERAL1_SMALL" 
     image                       = "hashicorp/terraform:1.5.5"
     type                        = "LINUX_CONTAINER"
+    privileged_mode             = true
     image_pull_credentials_type = "SERVICE_ROLE"
     registry_credential {
       credential = var.dockerhub_credentials
